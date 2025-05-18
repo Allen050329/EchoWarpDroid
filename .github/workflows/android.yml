@@ -23,10 +23,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build && ls -al && ls -al */*; find . -name "*.apk"
+      run: ./gradlew build && find . -name "*.apk"
       
     - name: Upload Binaries
       uses: actions/upload-artifact@v4
       with:
         name: EchoWarpDroid
-        path: dist/EchoWarpDroid
+        path: app/build/outputs/apk
